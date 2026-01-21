@@ -16,3 +16,11 @@
 - Admin / Ops override panel
 - Booking history and event logs
 - Simple multi-screen frontend with routing
+
+---
+
+## Tech Stack
+
+**Backend**
+- Node.js, Express
+- MongoDB, Mongoose
