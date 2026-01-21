@@ -24,3 +24,14 @@
 **Backend**
 - Node.js, Express
 - MongoDB, Mongoose
+
+---
+
+## Setup (for localhost)
+
+### backend
+
+```bash
+cd booking-backend
+npm install
+node server.js
