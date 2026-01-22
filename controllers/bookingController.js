@@ -241,7 +241,19 @@ const getBookingById = async (req, res) => {
       return res.status(404).json({ message: "Booking not found" })
     }
 
-    res.json(booking)
+    let providerName = null
+
+    if (booking.providerId) {
+      const provider = await Provider.findById(booking.providerId)
+      if (provider) {
+        providerName = provider.name
+      }
+    }
+
+    res.json({
+      ...booking.toObject(),
+      providerName: providerName
+    })
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: "Failed to fetch booking" })
