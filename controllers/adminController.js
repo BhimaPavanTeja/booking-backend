@@ -45,6 +45,18 @@ const overrideBookingStatus = async (req, res) => {
   }
 }
 
+const getAllBookings = async (req, res) => {
+  try {
+    const bookings = await Booking.find().sort({ createdAt: -1 })
+    res.json(bookings)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: "Failed to fetch bookings" })
+  }
+}
+
+
 module.exports = {
-  overrideBookingStatus
+  overrideBookingStatus,
+  getAllBookings
 }
